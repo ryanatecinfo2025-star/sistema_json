@@ -32,5 +32,5 @@ while digitado !=6:
        print("esta pessoa ficará com Gerar Relatório")
 
     if digitado == "0":
-       print("esta pessoa ficará com sair")
+       break
    
