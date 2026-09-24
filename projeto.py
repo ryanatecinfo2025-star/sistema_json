@@ -36,7 +36,6 @@ while digitado != "0":
             "sintomas": sintomas
         }
         
-        # Adiciona o paciente cadastrado na lista de inventário
         inventário.append(paciente)
         print(f"\n Paciente {nome} cadastrado com sucesso!")
         
