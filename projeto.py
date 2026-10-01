@@ -23,7 +23,25 @@ while digitado !=6:
        print("esta pessoa ficará com Editar")
 
     if digitado == "4":
-       print("esta pessoa ficará com Deletar")
+      nome_deletar = input("Digite o nome do paciente que deseja deletar: ")
+
+      encontrado = False
+
+      for paciente in inventário:
+         if paciente["nome"].lower() == nome_deletar.lower():
+               confirmacao = input("Tem certeza que deseja deletar? (S/N): ").strip().upper()
+
+               if confirmacao == "S":
+                  inventário.remove(paciente)
+                  print("Paciente deletado com sucesso!")
+               else:
+                  print("Operação cancelada.")
+
+               encontrado = True
+               break
+
+    if not encontrado:
+        print("Paciente não encontrado.")
 
     if digitado == "5":
        print("esta pessoa ficará com Pesquisar")
