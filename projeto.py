@@ -1,4 +1,4 @@
-
+import json
 inventário = []
 digitado = 0
 while digitado !=6:
@@ -34,3 +34,17 @@ while digitado !=6:
     if digitado == "0":
        break
    
+ if digitado == "2":
+    with open("dados.json", "r") as arquivo:
+        pacientes = json.load(arquivo)
+
+    if len(pacientes) == 0:
+        print("Nenhum paciente cadastrado.")
+    else:
+        for paciente in pacientes:
+            print("ID:", paciente["id"])
+            print("Nome:", paciente["nome"])
+            print("Idade:", paciente["idade"])
+            print("Telefone:", paciente["telefone"])
+            print("CPF:", paciente["cpf"])
+            print("Cidade:", paciente["cidade"])
