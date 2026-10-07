@@ -1,17 +1,4 @@
-import json
 inventário = []
-digitado = 0
-while digitado !=6:
-    print("Menu")
-    print("1 - Cadastrar")
-    print("2 - Exibir")
-    print("3 - Editar")
-    print("4 - Deletar")
-    print("5 - Pesquisar")
-    print("6 - Gerar Relatório")
-    print("0 - sair")
-
-    inventário = []
 digitado = ""
 
 while digitado != "0":
@@ -26,9 +13,6 @@ while digitado != "0":
 
     digitado = input("Escolha alguma opção: ")
 
-    if digitado == "0":
-       break
-   
     if digitado == "1":
         nome = input("Digite o nome completo do paciente: ")
         cpf = input("Digite o CPF do paciente: ")
@@ -54,23 +38,4 @@ while digitado != "0":
         
         inventário.append(paciente)
         print(f"\n Paciente {nome} cadastrado com sucesso!")
- main
-elif digitado == "2":
-    import json
-
-    with open("dados.json", "r", encoding="utf-8") as arquivo:
-        inventário = json.load(arquivo)
-
-    if not inventário:
-        print("Nenhum paciente cadastrado.")
-    else:
-        print("===== PACIENTES CADASTRADOS =====")
-
-        for paciente in inventário:
-            print(f"\nNome: {paciente['nome']}")
-            print(f"CPF: {paciente['cpf']}")
-            print(f"Data de nascimento: {paciente['data_de_nascimento']}")
-            print(f"Sexo: {paciente['sexo']}")
-            print(f"Endereço: {paciente['endereço']}")
-            print(f"Telefone: {paciente['telefone']}")
-            print(f"Sintomas: {paciente['sintomas']}")
+        
