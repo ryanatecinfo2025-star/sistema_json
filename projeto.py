@@ -54,23 +54,21 @@ while digitado != "0":
         
         inventário.append(paciente)
         print(f"\n Paciente {nome} cadastrado com sucesso!")
- main
-elif digitado == "2":
-    import json
+    elif digitado == "2":
 
-    with open("dados.json", "r", encoding="utf-8") as arquivo:
-        inventário = json.load(arquivo)
+        with open("dados.json", "r", encoding="utf-8") as arquivo:
+            inventário = json.load(arquivo)
 
-    if not inventário:
-        print("Nenhum paciente cadastrado.")
-    else:
-        print("===== PACIENTES CADASTRADOS =====")
+        if not inventário:
+            print("Nenhum paciente cadastrado.")
+        else:
+            print("===== PACIENTES CADASTRADOS =====")
 
-        for paciente in inventário:
-            print(f"\nNome: {paciente['nome']}")
-            print(f"CPF: {paciente['cpf']}")
-            print(f"Data de nascimento: {paciente['data_de_nascimento']}")
-            print(f"Sexo: {paciente['sexo']}")
-            print(f"Endereço: {paciente['endereço']}")
-            print(f"Telefone: {paciente['telefone']}")
-            print(f"Sintomas: {paciente['sintomas']}")
+            for paciente in inventário:
+                print(f"\nNome: {paciente['nome']}")
+                print(f"CPF: {paciente['cpf']}")
+                print(f"Data de nascimento: {paciente['data_de_nascimento']}")
+                print(f"Sexo: {paciente['sexo']}")
+                print(f"Endereço: {paciente['endereço']}")
+                print(f"Telefone: {paciente['telefone']}")
+                print(f"Sintomas: {paciente['sintomas']}")
