@@ -24,11 +24,9 @@ while digitado != "0":
     print("6 - Gerar Relatório")
     print("0 - Sair")
 
-    digitado = input("Escolha alguma opção: ")
-
     if digitado == "0":
-       break
-   
+           break
+       
     if digitado == "1":
         nome = input("Digite o nome completo do paciente: ")
         cpf = input("Digite o CPF do paciente: ")
@@ -72,3 +70,35 @@ while digitado != "0":
                 print(f"Endereço: {paciente['endereço']}")
                 print(f"Telefone: {paciente['telefone']}")
                 print(f"Sintomas: {paciente['sintomas']}")
+
+    if digitado == "3":
+       print("esta pessoa ficará com Editar")
+
+    if digitado == "4":
+      nome_deletar = input("Digite o nome do paciente que deseja deletar: ")
+
+      encontrado = False
+
+      for paciente in inventário:
+         if paciente["nome"].lower() == nome_deletar.lower():
+               confirmacao = input("Tem certeza que deseja deletar? (S/N): ").strip().upper()
+
+               if confirmacao == "S":
+                  inventário.remove(paciente)
+                  print("Paciente deletado com sucesso!")
+               else:
+                  print("Operação cancelada.")
+
+               encontrado = True
+               break
+
+    if not encontrado:
+        print("Paciente não encontrado.")
+
+    if digitado == "5":
+       print("esta pessoa ficará com Pesquisar")
+
+    if digitado == "6":
+       print("esta pessoa ficará com Gerar Relatório")
+
+    
