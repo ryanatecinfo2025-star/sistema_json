@@ -123,4 +123,20 @@ while digitado != "0":
     if digitado == "6":
        print("esta pessoa ficará com Gerar Relatório")
 
-    
+if digitado == "6":
+    print("\n===== RELATÓRIO DE PACIENTES =====")
+
+    if len(inventário) == 0:
+        print("Nenhum paciente cadastrado.")
+    else:
+        print(f"Total de pacientes cadastrados: {len(inventário)}")
+
+        for i, paciente in enumerate(inventário, start=1):
+            print(f"\n--- Paciente {i} ---")
+            print(f"Nome: {paciente['nome']}")
+            print(f"CPF: {paciente['cpf']}")
+            print(f"Data de nascimento: {paciente['data_de_nascimento']}")
+            print(f"Sexo: {paciente['sexo']}")
+            print(f"Endereço: {paciente['endereço']}")
+            print(f"Telefone: {paciente['telefone']}")
+            print(f"Sintomas: {paciente['sintomas']}")    
