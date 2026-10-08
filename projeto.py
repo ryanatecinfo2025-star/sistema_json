@@ -117,10 +117,57 @@ while digitado != "0":
     if not encontrado:
         print("Paciente não encontrado.")
 
-    if digitado == "5":
-        print("\n PESQUISAR PACIENTE ")
+      if digitado == "5":
+        print("\n--- PESQUISAR PACIENTE ---")
+        print("1 - Pesquisar por nome")
+        print("2 - Pesquisar por CPF")
 
-    if digitado == "6":
-       print("esta pessoa ficará com Gerar Relatório")
+        opcao_pesquisa = input("Escolha uma opção: ").strip()
 
-    
+        if opcao_pesquisa == "1":
+            nome_busca = input("Digite o nome do paciente: ").strip().lower()
+
+            encontrado = False
+
+            for paciente in inventário:
+                if nome_busca in paciente["nome"].lower():
+                    print("\n===== PACIENTE ENCONTRADO =====")
+                    print(f"Nome: {paciente['nome']}")
+                    print(f"CPF: {paciente['cpf']}")
+                    print(f"Data de nascimento: {paciente['data_de_nascimento']}")
+                    print(f"Sexo: {paciente['sexo']}")
+                    print(f"Endereço: {paciente['endereço']}")
+                    print(f"Telefone: {paciente['telefone']}")
+                    print(f"Sintomas: {paciente['sintomas']}")
+
+                    encontrado = True
+
+            if not encontrado:
+                print("Paciente não encontrado.")
+
+        elif opcao_pesquisa == "2":
+            cpf_busca = input("Digite o CPF do paciente: ").strip()
+
+            encontrado = False
+
+            for paciente in inventário:
+                if paciente["cpf"] == cpf_busca:
+                    print("\n===== PACIENTE ENCONTRADO =====")
+                    print(f"Nome: {paciente['nome']}")
+                    print(f"CPF: {paciente['cpf']}")
+                    print(f"Data de nascimento: {paciente['data_de_nascimento']}")
+                    print(f"Sexo: {paciente['sexo']}")
+                    print(f"Endereço: {paciente['endereço']}")
+                    print(f"Telefone: {paciente['telefone']}")
+                    print(f"Sintomas: {paciente['sintomas']}")
+
+                    encontrado = True
+                    break
+
+            if not encontrado:
+                print("Paciente não encontrado.")
+
+        else:
+            print("Opção inválida.")
+
+if digitado == "6":
