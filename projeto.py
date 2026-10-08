@@ -62,7 +62,7 @@ while digitado != "0":
     if digitado == "3":
         cpf_busca = input("Digite o CPF do paciente que deseja editar: ").strip()
        
-        #buscar o paciente no arquivo json baseado no cpdf_busca
+        #buscar o paciente no arquivo json baseado no cpf_busca
         #o que o arquivo encontrar, salvar em dados
 
         for paciente in dados:
