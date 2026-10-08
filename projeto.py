@@ -1,18 +1,6 @@
 import json
 inventário = []
 digitado = 0
-while digitado !=6:
-    print("Menu")
-    print("1 - Cadastrar")
-    print("2 - Exibir")
-    print("3 - Editar")
-    print("4 - Deletar")
-    print("5 - Pesquisar")
-    print("6 - Gerar Relatório")
-    print("0 - sair")
-
-    inventário = []
-digitado = ""
 
 while digitado != "0":
     print("\n--- Menu ---")
@@ -72,34 +60,8 @@ while digitado != "0":
                 print(f"Sintomas: {paciente['sintomas']}")
 
     if digitado == "3":
-       print("esta pessoa ficará com Editar")
-
-    if digitado == "4":
-      nome_deletar = input("Digite o nome do paciente que deseja deletar: ")
-
-      encontrado = False
-
-      for paciente in inventário:
-         if paciente["nome"].lower() == nome_deletar.lower():
-               confirmacao = input("Tem certeza que deseja deletar? (S/N): ").strip().upper()
-
-               if confirmacao == "S":
-                  inventário.remove(paciente)
-                  print("Paciente deletado com sucesso!")
-               else:
-                  print("Operação cancelada.")
-
-               encontrado = True
-               break
-
-    if not encontrado:
-        print("Paciente não encontrado.")
-
-    if digitado == "5":
-        print("\n EDITAR PACIENTE ")
-       
         cpf_busca = input("Digite o CPF do paciente que deseja editar: ").strip()
-
+       
         #buscar o paciente no arquivo json baseado no cpdf_busca
         #o que o arquivo encontrar, salvar em dados
 
@@ -131,9 +93,32 @@ while digitado != "0":
 
                 #salvar as alterações no arquivo json
                 print("Dados do paciente atualizados com sucesso!")
-                return
-       
+        
                 print("Paciente não encontrado!")
+
+    if digitado == "4":
+      nome_deletar = input("Digite o nome do paciente que deseja deletar: ")
+
+      encontrado = False
+
+      for paciente in inventário:
+         if paciente["nome"].lower() == nome_deletar.lower():
+               confirmacao = input("Tem certeza que deseja deletar? (S/N): ").strip().upper()
+
+               if confirmacao == "S":
+                  inventário.remove(paciente)
+                  print("Paciente deletado com sucesso!")
+               else:
+                  print("Operação cancelada.")
+
+               encontrado = True
+               break
+
+    if not encontrado:
+        print("Paciente não encontrado.")
+
+    if digitado == "5":
+        print("\n PESQUISAR PACIENTE ")
 
     if digitado == "6":
        print("esta pessoa ficará com Gerar Relatório")
