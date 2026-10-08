@@ -120,9 +120,6 @@ while digitado != "0":
     if digitado == "5":
         print("\n PESQUISAR PACIENTE ")
 
-    if digitado == "6":
-       print("esta pessoa ficará com Gerar Relatório")
-
 if digitado == "6":
     print("\n===== RELATÓRIO DE PACIENTES =====")
 
